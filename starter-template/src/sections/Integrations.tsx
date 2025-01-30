@@ -1,3 +1,4 @@
+
 import Tag from "@/components/Tag";
 import Image from "next/image";
 import figmaLogo from "@/assets/images/figma-logo.svg"
@@ -7,6 +8,7 @@ import relumeLogo from "@/assets/images/relume-logo.svg"
 import framerLogo from "@/assets/images/framer-logo.svg"
 import githubLogo from "@/assets/images/github-logo.svg"
 import IntegrationColumns from "@/components/IntegrationColumns";
+
 
 export const integrations = [
     { name: "Figma", icon: figmaLogo, description: "Figma is a collaborative interface design tool." },
@@ -31,8 +33,8 @@ export default function Integrations() {
                 <div className="lg:h-[50rem] h-[25rem] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] mt-8 lg:mt-0">
                     <div className="flex gap-4">
 
-                        <IntegrationColumns integrations={integrations}/>
-                        <IntegrationColumns integrations={integrations.slice().reverse()} className="hidden md:flex"/>
+                        <IntegrationColumns  integrations={integrations}/>
+                        <IntegrationColumns  down integrations={integrations.slice().reverse()} className="hidden md:flex"/>
                     </div>
                     
                 </div>

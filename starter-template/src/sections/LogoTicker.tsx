@@ -8,6 +8,8 @@ import apexLogo from "@/assets/images/apex.svg";
 import celestialLogo from "@/assets/images/celestial.svg";
 import twiceLogo from "@/assets/images/twice.svg";
 import Image from "next/image";
+import {motion,useScroll} from 'framer-motion'
+import { Fragment, useRef } from "react";
 
 const logos = [
     { name: "Quantum", image: quantumLogo },
@@ -21,16 +23,30 @@ const logos = [
 ];
 
 export default function LogoTicker() {
+    
     return (
         <section className="py-24 overflow-x-clip">
             <div className="container">
                 <h1 className="text-white/15 text-xl text-center mb-12">Already chosen by these market leaders</h1>
-                <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-                    <div className="flex gap-24 pr-24">
-                        {logos.map(logo=>(
-                            <Image src={logo.image} alt={logo.name}/>
-                        ))}
-                    </div>
+                <div className=" flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                    <motion.div animate= {{
+                        x:'-50%',
+                    }} transition={{
+                        duration:30,
+                        ease:'linear',
+                        repeat:Infinity
+                    }} className="flex flex-none gap-24 pr-[6.5rem]">
+                       { Array.from({length:2}).map((_,i)=>(
+                        <Fragment key={i}>
+                        
+                            {logos.map(logo=>(
+                                <Image key={logo.name} src={logo.image} alt={logo.name}/>
+                            ))}
+                        </Fragment>
+
+                       ))
+                    }
+                    </motion.div>
                 </div>
             </div>
         </section>
