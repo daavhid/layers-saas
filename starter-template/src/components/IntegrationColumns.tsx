@@ -13,6 +13,7 @@ const IntegrationColumns = (props:{
     className?:string,
     down?:boolean,
 }) => {
+    const {integrations,className,down} = props
     const animateRef = useRef<AnimationPlaybackControls>()
     const [isHovered,setisHovered] = useState(false)
     const [scope,animate] = useAnimate()
@@ -22,13 +23,12 @@ const IntegrationColumns = (props:{
             ease:'linear',
             repeat:Infinity
         })
-    },[])
+    },[animate,down,scope])
     useEffect(()=>{
         if (animateRef.current){
             animateRef.current.speed = isHovered ?0.5:1
         }
     })
-    const {integrations,className,down} = props
   return (
     <motion.div
     ref={scope}

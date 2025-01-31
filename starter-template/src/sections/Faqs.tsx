@@ -30,9 +30,9 @@ const faqs = [
 
 export default function Faqs() {
     const [selectedIndex,setSelectedIndex] = useState<number | null>(0)
-    const [prevselectedIndex,setPrevSelectedIndex] = useState<number | null>(0)
-    const [isOpen,setIsOpen] = useState(true)
-    const [previsOpen,setprevIsOpen] = useState(true)
+    // const [prevselectedIndex,setPrevSelectedIndex] = useState<number | null>(0)
+    // const [isOpen,setIsOpen] = useState(true)
+    // const [previsOpen,setprevIsOpen] = useState(true)
     
     return (
         <section className="py-24">
@@ -40,15 +40,10 @@ export default function Faqs() {
             <Tag className="">faqs</Tag>
                     <h1 className="text-center mt-8 text-6xl font-medium max-w-xl mx-auto ">Questions? We&apos;ve got  <span className="text-lime-400">answers</span></h1>
                     <div className="mt-12 flex flex-col  gap-6 max-w-xl mx-auto ">
-                        {faqs.map((faq,index)=>(
+                        {faqs.map((faq,index:number)=>(
                             <div key={index} className="bg-neutral-900 p-6 rounded-3xl border border-white/15 font-medium">
                                 <div className="flex items-center justify-between text-lg" onClick={()=>{
-                                        setSelectedIndex(prev=>{
-                                            if(prev===index){
-                                                setPrevSelectedIndex(prev)
-                                            }
-                                            return index
-                                        })
+                                        setSelectedIndex(index)
                                         
                                         
                                     }}>

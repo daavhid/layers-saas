@@ -7,7 +7,7 @@ export default function CallToAction() {
     const [scope,animate] = useAnimate()
     useEffect(()=>{
         animateRef.current = animate(scope.current,{x:'-50%'},{duration:30,ease:'linear',repeat:Infinity})
-    },[])
+    },[animate,scope])
     useEffect(()=>{
         if(animateRef.current){
 
@@ -23,7 +23,7 @@ export default function CallToAction() {
 
                     <motion.div
                     ref={scope}
-                    className="  gap-16 flex-none flex font-medium pr-10 group cursor-pointer" onMouseEnter={(e)=>{setisHovered(true)}} onMouseLeave={()=>{setisHovered(false)}}>
+                    className="  gap-16 flex-none flex font-medium pr-10 group cursor-pointer" onMouseEnter={()=>{setisHovered(true)}} onMouseLeave={()=>{setisHovered(false)}}>
 
                         {
                             Array.from({ length: 10 }).map((_, index) => (
