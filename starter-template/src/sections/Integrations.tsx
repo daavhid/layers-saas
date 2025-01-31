@@ -1,6 +1,6 @@
 
 import Tag from "@/components/Tag";
-import Image from "next/image";
+// import Image from "next/image";
 import figmaLogo from "@/assets/images/figma-logo.svg"
 import notionLogo from "@/assets/images/notion-logo.svg"
 import slackLogo from "@/assets/images/slack-logo.svg"

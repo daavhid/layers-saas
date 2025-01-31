@@ -8,8 +8,8 @@ import apexLogo from "@/assets/images/apex.svg";
 import celestialLogo from "@/assets/images/celestial.svg";
 import twiceLogo from "@/assets/images/twice.svg";
 import Image from "next/image";
-import {motion,useScroll} from 'framer-motion'
-import { Fragment, useRef } from "react";
+import {motion} from 'framer-motion'
+import { Fragment,} from "react";
 
 const logos = [
     { name: "Quantum", image: quantumLogo },

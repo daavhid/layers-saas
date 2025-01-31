@@ -4,7 +4,7 @@ import designExample1 from '@/assets/images/design-example-1.png'
 import designExample2 from '@/assets/images/design-example-2.png'
 import Image from "next/image";
 import Pointer from "@/components/Pointer";
-import {AnimationSequence, motion,useAnimate} from 'framer-motion'
+import { motion,useAnimate} from 'framer-motion'
 import { useEffect, useRef } from "react";
 import customCursor from '@/assets/images/cursor-you.svg'
 
@@ -37,7 +37,7 @@ export default function Hero() {
             [rpointerScope.current,{y:0,x:180},{duration:0.5}],
             [rpointerScope.current,{y:[0,20,0],x:0},{duration:0.5}]
         ]);
-    },[])
+    },[lDesignAnimate,lDesignScope,lpointerAnimate,rDesignAnimate,rDesignScope,rpointerAnimate,rpointerScope,lpointerScope])
     return (
         <section style={{cursor:`url(${customCursor.src}), auto`}} ref={constraintRef} className="  py-24 overflow-x-clip">
             <div className="relative container ">

@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, HTMLAttributes, HtmlHTMLAttributes } from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import {cva} from 'class-variance-authority'
 
 const classes = cva('h-12 px-6  border rounded-full ', {
