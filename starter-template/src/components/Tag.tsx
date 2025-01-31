@@ -1,4 +1,6 @@
+'use client'
 import React, { HTMLAttributes } from 'react'
+
 import { twMerge } from 'tailwind-merge'
 
 const Tag = (props:HTMLAttributes<HTMLDivElement>) => {
